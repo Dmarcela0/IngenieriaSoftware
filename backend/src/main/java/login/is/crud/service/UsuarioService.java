@@ -1,6 +1,8 @@
 package login.is.crud.service;
 
+
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -13,17 +15,32 @@ import login.is.crud.repository.UsuarioRepository;
 
 public class UsuarioService {
 
-private UsuarioRepository repositorio;
+UsuarioRepository usuarioRepository;
 
-public UsuarioService (UsuarioRepository repositorio){
-    this.repositorio=repositorio;
+public Optional<Usuario> obtenerPorIdentificacion (int identificacion){
+    return usuarioRepository.findByIdentificacion(identificacion);
+
 }
 
-public List<Usuario> getRepositorio(){
-    return this.repositorio.findAll();
+public boolean existsByIdentificacion(int identificacion) {
+    return usuarioRepository.existsByIdentificacion(identificacion);
+  }
+  public boolean existsByEmail(String correo) {
+	    return usuarioRepository.existsByEmail(correo);
+	  }
+
+  public void deleteByIdentificacion(int identificacion) {
+    usuarioRepository.deleteByIdentificacion(identificacion);
+  }
+
+  public void guardar(Usuario usuario) {
+    usuarioRepository.save(usuario);
+  }
+
+public List<Usuario> obtenerTodos() {
+    List<Usuario> lista = usuarioRepository.obtenerTodos();
+    return lista;
 }
-
-
 
 
     
