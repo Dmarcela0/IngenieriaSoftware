@@ -25,9 +25,6 @@ public Optional<Usuario> obtenerPorIdentificacion (int identificacion){
 public boolean existsByIdentificacion(int identificacion) {
     return usuarioRepository.existsByIdentificacion(identificacion);
   }
-  public boolean existsByEmail(String correo) {
-	    return usuarioRepository.existsByEmail(correo);
-	  }
 
   public void deleteByIdentificacion(int identificacion) {
     usuarioRepository.deleteByIdentificacion(identificacion);
@@ -37,10 +34,6 @@ public boolean existsByIdentificacion(int identificacion) {
     usuarioRepository.save(usuario);
   }
 
-public List<Usuario> obtenerTodos() {
-    List<Usuario> lista = usuarioRepository.obtenerTodos();
-    return lista;
-}
 
 
     

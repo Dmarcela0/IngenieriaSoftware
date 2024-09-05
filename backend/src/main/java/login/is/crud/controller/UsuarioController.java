@@ -14,14 +14,9 @@ import login.is.crud.service.UsuarioService;
 @RestController
 public class UsuarioController {
 
-    UsuarioService pacienteService ;
+    UsuarioService usuarioService ;
 
-
-    @GetMapping("/")
-	public ResponseEntity<List<Usuario>> getLista() {
-		List<Usuario> lista = pacienteService.obtenerTodos();
-		return new ResponseEntity<List<Usuario>>(lista, HttpStatus.OK);
-	}
+	
     
     
     

@@ -7,7 +7,6 @@ import jakarta.persistence.Id;
 @Entity
 public class Usuario {
 @Id
-private long id;
 @Column (name = "identificacion")
     private int identificacion;
 @Column (name = "nombre")
@@ -35,13 +34,6 @@ private long id;
         this.estado = estado;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public int getIdentificacion() {
         return this.identificacion;
