@@ -1,12 +1,29 @@
 package login.is.crud.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Usuario {
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+private long id;
+@Column (name = "identificacion")
     private int identificacion;
+@Column (name = "nombre")
     private String nombre;
+@Column (name ="correo")
     private String correo;
+@Column (name = "contraseña")
     private String contraseña;
+@Column (name = "usuario")
     private String usuario;
+@Column (name = "estado")
     private boolean estado; 
+
 
 
     public Usuario(int identificacion, String nombre, String correo, String contraseña, String usuario, boolean estado) {
