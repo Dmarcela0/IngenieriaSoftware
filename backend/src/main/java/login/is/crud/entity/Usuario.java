@@ -24,6 +24,9 @@ private long id;
 @Column (name = "estado")
     private boolean estado; 
 
+    public Usuario (){
+
+    }
 
 
     public Usuario(int identificacion, String nombre, String correo, String contraseña, String usuario, boolean estado) {
@@ -35,7 +38,13 @@ private long id;
         this.estado = estado;
     }
 
-    
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public int getIdentificacion() {
         return this.identificacion;
@@ -88,12 +97,6 @@ private long id;
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-
-
-    
-
-
-
 
     
 }

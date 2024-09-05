@@ -1,24 +1,26 @@
 package login.is.crud.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
 import login.is.crud.entity.Usuario;
+import login.is.crud.repository.UsuarioRepository;
 
 @Service
 @Transactional
 
-
 public class UsuarioService {
-Usuario usuario1;
-public UsuarioService(){
-    this.usuario1 = new Usuario(1030520666, "Diana Garzon", "dianagarzon0513@gmail.com", "123","Dmarcela0", true);
-    
 
+private UsuarioRepository repositorio;
+
+public UsuarioService (UsuarioRepository repositorio){
+    this.repositorio=repositorio;
 }
 
-public Usuario getUsuario(){
-    return this.usuario1;
+public List<Usuario> getRepositorio(){
+    return this.repositorio.findAll();
 }
 
 

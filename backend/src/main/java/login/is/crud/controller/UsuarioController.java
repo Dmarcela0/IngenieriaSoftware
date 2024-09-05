@@ -22,16 +22,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 public class UsuarioController {
 
-    UsuarioService se1 = new UsuarioService();
+    UsuarioService se1 ;
 
-    Usuario usuario1 ;
-
-    public UsuarioController(){
-        this.usuario1 =this.se1.getUsuario();
+    public UsuarioController(UsuarioService se1){
+        this.se1=se1;
     }
     @GetMapping("informacion")
-    public Usuario informacion() {
-        return this.usuario1;
+    public List<Usuario>informacion() {
+        return this.se1.getRepositorio();
     }
     
     
