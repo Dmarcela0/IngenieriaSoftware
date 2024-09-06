@@ -4,20 +4,20 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-@Entity
-public class Usuario {
-@Id
-@Column (name = "identificacion")
+    @Entity
+    public class Usuario {
+    @Id
+    @Column (name = "identificacion")
     private int identificacion;
-@Column (name = "nombre")
+    @Column (name = "nombre")
     private String nombre;
-@Column (name ="correo")
+    @Column (name ="correo")
     private String correo;
-@Column (name = "contraseña")
-    private String contraseña;
-@Column (name = "usuario")
+    @Column (name = "contrasenia")
+    private String contrasenia;
+    @Column (name = "usuario")
     private String usuario;
-@Column (name = "estado")
+    @Column (name = "estado")
     private boolean estado; 
 
     public Usuario (){
@@ -25,11 +25,11 @@ public class Usuario {
     }
 
 
-    public Usuario(int identificacion, String nombre, String correo, String contraseña, String usuario, boolean estado) {
+    public Usuario(int identificacion, String nombre, String correo, String contrasenia, String usuario, boolean estado) {
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.correo = correo;
-        this.contraseña = contraseña;
+        this.contrasenia = contrasenia;
         this.usuario = usuario;
         this.estado = estado;
     }
@@ -59,12 +59,12 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public String getContraseña() {
-        return this.contraseña;
+    public String getContrasenia() {
+        return this.contrasenia;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasenia(String contraseña) {
+        this.contrasenia = contraseña;
     }
 
     public String getUsuario() {

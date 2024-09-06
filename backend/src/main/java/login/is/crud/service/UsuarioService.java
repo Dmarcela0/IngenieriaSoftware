@@ -12,29 +12,38 @@ import login.is.crud.repository.UsuarioRepository;
 
 @Service
 @Transactional
-
 public class UsuarioService {
 
-UsuarioRepository usuarioRepository;
+    UsuarioRepository usuarioRepository;
 
-public Optional<Usuario> obtenerPorIdentificacion (int identificacion){
-    return usuarioRepository.findByIdentificacion(identificacion);
+    public Optional<Usuario> obtenerPorIdentificacion (int identificacion){
+        return usuarioRepository.findByIdentificacion(identificacion);
+    }
 
-}
+    public boolean existsByIdentificacion(int identificacion) {
+        return usuarioRepository.existsByIdentificacion(identificacion);
+      }
 
-public boolean existsByIdentificacion(int identificacion) {
-    return usuarioRepository.existsByIdentificacion(identificacion);
-  }
-
-  public void deleteByIdentificacion(int identificacion) {
+    public void deleteByIdentificacion(int identificacion) {
     usuarioRepository.deleteByIdentificacion(identificacion);
   }
 
-  public void guardar(Usuario usuario) {
+    public void guardar(Usuario usuario) {
     usuarioRepository.save(usuario);
   }
 
+    public List<Usuario> consultarUsuario() {
+        return usuarioRepository.findAll();
+    }
 
+    public Usuario actualizar(Usuario usuario) {
+        if (this.existsByIdentificacion(usuario.getIdentificacion()))
+            return usuarioRepository.save(usuario);
+        return null;
+    }
 
-    
+    public void borrar(Usuario usuario) {
+        usuarioRepository.delete(usuario);
+    }
+
 }

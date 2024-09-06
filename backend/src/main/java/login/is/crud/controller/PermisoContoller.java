@@ -14,4 +14,5 @@ public class PermisoContoller {
 
     @GetMapping("")
     public List<Permiso> getAllPermisos() { return this.permisoService.getRepositorio(); }
+
 }
