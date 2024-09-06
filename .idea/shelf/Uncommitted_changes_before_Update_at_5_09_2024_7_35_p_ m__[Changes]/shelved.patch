@@ -1,0 +1,426 @@
+Index: fronted-crud/tsconfig.app.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */\r\n/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */\r\n{\r\n  \"extends\": \"./tsconfig.json\",\r\n  \"compilerOptions\": {\r\n    \"outDir\": \"./out-tsc/app\",\r\n    \"types\": [\r\n      \"node\"\r\n    ]\r\n  },\r\n  \"files\": [\r\n    \"src/main.ts\",\r\n    \"src/main.server.ts\",\r\n    \"server.ts\"\r\n  ],\r\n  \"include\": [\r\n    \"src/**/*.d.ts\"\r\n  ]\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/fronted-crud/tsconfig.app.json b/fronted-crud/tsconfig.app.json
+--- a/fronted-crud/tsconfig.app.json	(revision cab541210602519e0f2d4964e08407dd86519d9a)
++++ b/fronted-crud/tsconfig.app.json	(date 1725582220942)
+@@ -10,8 +10,7 @@
+   },
+   "files": [
+     "src/main.ts",
+-    "src/main.server.ts",
+-    "server.ts"
++    "src/polyfills.ts"
+   ],
+   "include": [
+     "src/**/*.d.ts"
+Index: fronted-crud/src/app/home/home.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { Component,OnInit } from '@angular/core';\r\nimport { ButtonModule } from 'primeng/button';\r\n\r\n@Component({\r\n  selector: 'app-home',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './home.component.html',\r\n  styleUrl: './home.component.css'\r\n})\r\nexport class HomeComponent implements OnInit {\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/fronted-crud/src/app/home/home.component.ts b/fronted-crud/src/app/home/home.component.ts
+--- a/fronted-crud/src/app/home/home.component.ts	(revision cab541210602519e0f2d4964e08407dd86519d9a)
++++ b/fronted-crud/src/app/home/home.component.ts	(date 1725582220941)
+@@ -6,7 +6,7 @@
+   standalone: true,
+   imports: [],
+   templateUrl: './home.component.html',
+-  styleUrl: './home.component.css'
++  styleUrl: './home.component.scss'
+ })
+ export class HomeComponent implements OnInit {
+   constructor() { }
+Index: fronted-crud/src/app/home/home.component.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/fronted-crud/src/app/home/home.component.scss b/fronted-crud/src/app/home/home.component.scss
+new file mode 100644
+--- /dev/null	(date 1725582220940)
++++ b/fronted-crud/src/app/home/home.component.scss	(date 1725582220940)
+@@ -0,0 +1,90 @@
++h1, h2, h3, h4, h5, h6 {
++  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
++}
++
++.display-4 {
++  font-size: 2.5rem;
++}
++@media (min-width: 768px) {
++  .display-4 {
++    font-size: 3rem;
++  }
++}
++
++.flex-auto {
++  flex: 0 0 auto;
++}
++
++.h-250 {
++  height: 250px;
++}
++@media (min-width: 768px) {
++  .h-md-250 {
++    height: 250px;
++  }
++}
++
++/* Pagination */
++.blog-pagination {
++  margin-bottom: 4rem;
++}
++
++/* Blog posts */
++.blog-post {
++  margin-bottom: 4rem;
++}
++.blog-post-title {
++  font-size: 2.5rem;
++}
++.blog-post-meta {
++  margin-bottom: 1.25rem;
++  color: #727272;
++}
++.feature-icon {
++  width: 4rem;
++  height: 4rem;
++  border-radius: .75rem;
++}
++
++.icon-link > .bi {
++  margin-top: .125rem;
++  margin-left: .125rem;
++  fill: currentcolor;
++  transition: transform .25s ease-in-out;
++}
++.icon-link:hover > .bi {
++  transform: translate(.25rem);
++}
++
++.icon-square {
++  width: 3rem;
++  height: 3rem;
++  border-radius: .75rem;
++}
++
++.text-shadow-1 {
++  text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25);
++}
++.text-shadow-2 {
++  text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25);
++}
++.text-shadow-3 {
++  text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25);
++}
++
++.card-cover {
++  background-repeat: no-repeat;
++  background-position: center center;
++  background-size: cover;
++}
++
++.feature-icon-small {
++  width: 3rem;
++  height: 3rem;
++}
++
++.col {
++  cursor: pointer;
++}
++
++
+Index: fronted-crud/src/app/home/home.component.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><section style=\"background-color: #eee;\">\r\n    <div class=\"p-4 p-md-5 mb-4 rounded text-bg-dark mt-4 ms-4 me-4\">\r\n      <div class=\"col-md-12 px-0\">\r\n        <h1 class=\"display-4 fst-italic\">EMPRESA INICIAL</h1>\r\n        <p class=\"lead my-3\"><strong>Proyecto:</strong> Login</p>\r\n  \r\n      </div>\r\n    </div>\r\n    <div class=\"container px-4 py-5\" id=\"custom-cards\">\r\n      <h2 class=\"pb-2 border-bottom\">Opciones</h2>\r\n      <div class=\"row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5\">\r\n        <div class=\"col\">\r\n          <div class=\"card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg\"\r\n            style=\"background-image: url('/assets/unsplash-photo-1.jpg');cursor:pointer;\">\r\n            <div class=\"d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 \" routerLink=\"/pacientes/registrar\">\r\n              <h3 class=\"pt-5 mt-5 mb-4 display-6 lh-1 fw-bold\">Registrar Usuarios</h3>\r\n            </div>\r\n          </div>\r\n        </div>\r\n  \r\n        <div class=\"col\">\r\n          <div class=\"card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg\"\r\n            style=\"background-image: url('/assets/unsplash-photo-2.jpg');cursor:pointer;\">\r\n            <div class=\"d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 \" routerLink=\"/citas/agendar\">\r\n              <h3 class=\"pt-5 mt-5 mb-4 display-6 lh-1 fw-bold\">Ingresar</h3>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  \r\n  </section>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/fronted-crud/src/app/home/home.component.html b/fronted-crud/src/app/home/home.component.html
+--- a/fronted-crud/src/app/home/home.component.html	(revision cab541210602519e0f2d4964e08407dd86519d9a)
++++ b/fronted-crud/src/app/home/home.component.html	(date 1725582220939)
+@@ -1,32 +1,31 @@
+ <section style="background-color: #eee;">
+-    <div class="p-4 p-md-5 mb-4 rounded text-bg-dark mt-4 ms-4 me-4">
+-      <div class="col-md-12 px-0">
+-        <h1 class="display-4 fst-italic">EMPRESA INICIAL</h1>
+-        <p class="lead my-3"><strong>Proyecto:</strong> Login</p>
+-  
+-      </div>
+-    </div>
+-    <div class="container px-4 py-5" id="custom-cards">
+-      <h2 class="pb-2 border-bottom">Opciones</h2>
+-      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+-        <div class="col">
+-          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+-            style="background-image: url('/assets/unsplash-photo-1.jpg');cursor:pointer;">
+-            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 " routerLink="/pacientes/registrar">
+-              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Registrar Usuarios</h3>
+-            </div>
++  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark mt-4 ms-4 me-4">
++    <div class="col-md-12 px-0">
++      <h1 class="display-4 fst-italic">Nueva empresa</h1>
++      <p class="lead my-3"><strong>Proyecto:</strong> Ingreso login</p>
++      <p class="lead my-3"><strong>Desarrollado por:</strong></p>
++    </div>
++  </div>
++  <div class="container px-4 py-5" id="custom-cards">
++    <h2 class="pb-2 border-bottom">Opciones</h2>
++    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
++      <div class="col">
++        <a routerLink="/pacientes/registrar" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
++           style="background-image: url('/assets/unsplash-photo-1.jpg'); cursor: pointer;">
++          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
++            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Ingresar</h3>
+           </div>
+-        </div>
+-  
+-        <div class="col">
+-          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+-            style="background-image: url('/assets/unsplash-photo-2.jpg');cursor:pointer;">
+-            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 " routerLink="/citas/agendar">
+-              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Ingresar</h3>
+-            </div>
++        </a>
++      </div>
++
++      <div class="col">
++        <a routerLink="/citas/agendar" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
++           style="background-image: url('/assets/unsplash-photo-2.jpg'); cursor: pointer;">
++          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
++            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Nuevo usuario</h3>
+           </div>
+-        </div>
+-      </div>
+-    </div>
+-  
+-  </section>
+\ No newline at end of file
++        </a>
++      </div>
++    </div>
++  </div>
++</section>
+Index: .idea/sonarlint/issuestore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\nh\n8backend/src/main/java/login/is/crud/CrudApplication.java\u0012,5\\2\\5283229059aae67308c9dc2b09e735d8939031c7\nt\nDbackend/src/main/java/login/is/crud/controller/PermisoContoller.java\u0012,5\\0\\50d2f51baaa329a8e0bb405970966da4c3e47e08\no\n?backend/src/main/java/login/is/crud/service/UsuarioService.java\u0012,d\\8\\d8574c3582bba438246a320c0e04c427ef098d7c\ng\n7backend/src/main/java/login/is/crud/entity/Usuario.java\u0012,d\\9\\d920f2bf100dd28a1e5414f73d8bb887c7d00a9b
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/issuestore/index.pb b/.idea/sonarlint/issuestore/index.pb
+--- a/.idea/sonarlint/issuestore/index.pb	(revision cab541210602519e0f2d4964e08407dd86519d9a)
++++ b/.idea/sonarlint/issuestore/index.pb	(date 1725582822693)
+@@ -6,4 +6,6 @@
+ o
+ ?backend/src/main/java/login/is/crud/service/UsuarioService.java,d\8\d8574c3582bba438246a320c0e04c427ef098d7c
+ g
+-7backend/src/main/java/login/is/crud/entity/Usuario.java,d\9\d920f2bf100dd28a1e5414f73d8bb887c7d00a9b
+\ No newline at end of file
++7backend/src/main/java/login/is/crud/entity/Usuario.java,d\9\d920f2bf100dd28a1e5414f73d8bb887c7d00a9b
++B
++backend/.gitignore,7\e\7e16691a9fc60084a157565ec422c8094d3df67c
+\ No newline at end of file
+Index: fronted-crud/angular.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"$schema\": \"./node_modules/@angular/cli/lib/config/schema.json\",\r\n  \"version\": 1,\r\n  \"newProjectRoot\": \"projects\",\r\n  \"projects\": {\r\n    \"fronted-crud\": {\r\n      \"projectType\": \"application\",\r\n      \"schematics\": {},\r\n      \"root\": \"\",\r\n      \"sourceRoot\": \"src\",\r\n      \"prefix\": \"app\",\r\n      \"architect\": {\r\n        \"build\": {\r\n          \"builder\": \"@angular-devkit/build-angular:application\",\r\n          \"options\": {\r\n            \"outputPath\": \"dist/fronted-crud\",\r\n            \"index\": \"src/index.html\",\r\n            \"browser\": \"src/main.ts\",\r\n            \"polyfills\": [\r\n              \"zone.js\"\r\n            ],\r\n            \"tsConfig\": \"tsconfig.app.json\",\r\n            \"assets\": [\r\n              {\r\n                \"glob\": \"**/*\",\r\n                \"input\": \"public\"\r\n              }\r\n            ],\r\n            \"styles\": [\r\n              \"src/styles.css\"\r\n            ],\r\n            \"scripts\": [],\r\n            \"server\": \"src/main.server.ts\",\r\n            \"prerender\": true,\r\n            \"ssr\": {\r\n              \"entry\": \"server.ts\"\r\n            }\r\n          },\r\n          \"configurations\": {\r\n            \"production\": {\r\n              \"budgets\": [\r\n                {\r\n                  \"type\": \"initial\",\r\n                  \"maximumWarning\": \"500kB\",\r\n                  \"maximumError\": \"1MB\"\r\n                },\r\n                {\r\n                  \"type\": \"anyComponentStyle\",\r\n                  \"maximumWarning\": \"2kB\",\r\n                  \"maximumError\": \"4kB\"\r\n                }\r\n              ],\r\n              \"outputHashing\": \"all\"\r\n            },\r\n            \"development\": {\r\n              \"optimization\": false,\r\n              \"extractLicenses\": false,\r\n              \"sourceMap\": true\r\n            }\r\n          },\r\n          \"defaultConfiguration\": \"production\"\r\n        },\r\n        \"serve\": {\r\n          \"builder\": \"@angular-devkit/build-angular:dev-server\",\r\n          \"configurations\": {\r\n            \"production\": {\r\n              \"buildTarget\": \"fronted-crud:build:production\"\r\n            },\r\n            \"development\": {\r\n              \"buildTarget\": \"fronted-crud:build:development\"\r\n            }\r\n          },\r\n          \"defaultConfiguration\": \"development\"\r\n        },\r\n        \"extract-i18n\": {\r\n          \"builder\": \"@angular-devkit/build-angular:extract-i18n\"\r\n        },\r\n        \"test\": {\r\n          \"builder\": \"@angular-devkit/build-angular:karma\",\r\n          \"options\": {\r\n            \"polyfills\": [\r\n              \"zone.js\",\r\n              \"zone.js/testing\"\r\n            ],\r\n            \"tsConfig\": \"tsconfig.spec.json\",\r\n            \"assets\": [\r\n              {\r\n                \"glob\": \"**/*\",\r\n                \"input\": \"public\"\r\n              }\r\n            ],\r\n            \"styles\": [\r\n              \"node_modules/primeng/resources/themes/lara-light-blue/theme.css\",\r\n              \"node_modules/primeng/resources/primeng.min.css\",\r\n              \"node_modules/primefelex/primeflex.css\",\r\n              \"src/styles.scss\"\r\n              \r\n            ],\r\n            \"scripts\": []\r\n          }\r\n        }\r\n      }\r\n    }\r\n  },\r\n  \"cli\": {\r\n    \"analytics\": \"70074ebe-9c3c-4464-b93b-3795b06f811d\"\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/fronted-crud/angular.json b/fronted-crud/angular.json
+--- a/fronted-crud/angular.json	(revision cab541210602519e0f2d4964e08407dd86519d9a)
++++ b/fronted-crud/angular.json	(date 1725582220937)
+@@ -3,59 +3,65 @@
+   "version": 1,
+   "newProjectRoot": "projects",
+   "projects": {
+-    "fronted-crud": {
++    "CitasMedicas": {
+       "projectType": "application",
+-      "schematics": {},
++      "schematics": {
++        "@schematics/angular:component": {
++          "style": "scss"
++        }
++      },
+       "root": "",
+       "sourceRoot": "src",
+       "prefix": "app",
+       "architect": {
+         "build": {
+-          "builder": "@angular-devkit/build-angular:application",
++          "builder": "@angular-devkit/build-angular:browser",
+           "options": {
+-            "outputPath": "dist/fronted-crud",
++            "outputPath": "dist/citas-medicas",
+             "index": "src/index.html",
+-            "browser": "src/main.ts",
+-            "polyfills": [
+-              "zone.js"
+-            ],
++            "main": "src/main.ts",
++            "polyfills": "src/polyfills.ts",
+             "tsConfig": "tsconfig.app.json",
++            "inlineStyleLanguage": "scss",
+             "assets": [
+-              {
+-                "glob": "**/*",
+-                "input": "public"
+-              }
++              "src/favicon.ico",
++              "src/assets"
+             ],
+             "styles": [
+-              "src/styles.css"
++              "src/styles.scss",
++              "node_modules/ngx-toastr/toastr.css"
+             ],
+-            "scripts": [],
+-            "server": "src/main.server.ts",
+-            "prerender": true,
+-            "ssr": {
+-              "entry": "server.ts"
+-            }
++            "scripts": []
+           },
+           "configurations": {
+             "production": {
+               "budgets": [
+                 {
+                   "type": "initial",
+-                  "maximumWarning": "500kB",
+-                  "maximumError": "1MB"
++                  "maximumWarning": "500kb",
++                  "maximumError": "1mb"
+                 },
+                 {
+                   "type": "anyComponentStyle",
+-                  "maximumWarning": "2kB",
+-                  "maximumError": "4kB"
++                  "maximumWarning": "2kb",
++                  "maximumError": "4kb"
++                }
++              ],
++              "fileReplacements": [
++                {
++                  "replace": "src/environments/environment.ts",
++                  "with": "src/environments/environment.prod.ts"
+                 }
+               ],
+               "outputHashing": "all"
+             },
+             "development": {
++              "buildOptimizer": false,
+               "optimization": false,
++              "vendorChunk": true,
+               "extractLicenses": false,
+-              "sourceMap": true
++              "sourceMap": true,
++              "namedChunks": true
+             }
+           },
+           "defaultConfiguration": "production"
+@@ -64,37 +70,34 @@
+           "builder": "@angular-devkit/build-angular:dev-server",
+           "configurations": {
+             "production": {
+-              "buildTarget": "fronted-crud:build:production"
++              "browserTarget": "CitasMedicas:build:production"
+             },
+             "development": {
+-              "buildTarget": "fronted-crud:build:development"
++              "browserTarget": "CitasMedicas:build:development"
+             }
+           },
+           "defaultConfiguration": "development"
+         },
+         "extract-i18n": {
+-          "builder": "@angular-devkit/build-angular:extract-i18n"
++          "builder": "@angular-devkit/build-angular:extract-i18n",
++          "options": {
++            "browserTarget": "CitasMedicas:build"
++          }
+         },
+         "test": {
+           "builder": "@angular-devkit/build-angular:karma",
+           "options": {
+-            "polyfills": [
+-              "zone.js",
+-              "zone.js/testing"
+-            ],
++            "main": "src/test.ts",
++            "polyfills": "src/polyfills.ts",
+             "tsConfig": "tsconfig.spec.json",
++            "karmaConfig": "karma.conf.js",
++            "inlineStyleLanguage": "scss",
+             "assets": [
+-              {
+-                "glob": "**/*",
+-                "input": "public"
+-              }
++              "src/favicon.ico",
++              "src/assets"
+             ],
+             "styles": [
+-              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+-              "node_modules/primeng/resources/primeng.min.css",
+-              "node_modules/primefelex/primeflex.css",
+               "src/styles.scss"
+-              
+             ],
+             "scripts": []
+           }
+@@ -103,6 +106,6 @@
+     }
+   },
+   "cli": {
+-    "analytics": "70074ebe-9c3c-4464-b93b-3795b06f811d"
++    "analytics": "ceab0858-0f95-4701-83ce-d693b6a31ef4"
+   }
+-}
++}
+\ No newline at end of file
+Index: .idea/sonarlint/securityhotspotstore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\nh\n8backend/src/main/java/login/is/crud/CrudApplication.java\u0012,5\\2\\5283229059aae67308c9dc2b09e735d8939031c7\nt\nDbackend/src/main/java/login/is/crud/controller/PermisoContoller.java\u0012,5\\0\\50d2f51baaa329a8e0bb405970966da4c3e47e08\no\n?backend/src/main/java/login/is/crud/service/UsuarioService.java\u0012,d\\8\\d8574c3582bba438246a320c0e04c427ef098d7c\ng\n7backend/src/main/java/login/is/crud/entity/Usuario.java\u0012,d\\9\\d920f2bf100dd28a1e5414f73d8bb887c7d00a9b
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/securityhotspotstore/index.pb b/.idea/sonarlint/securityhotspotstore/index.pb
+--- a/.idea/sonarlint/securityhotspotstore/index.pb	(revision cab541210602519e0f2d4964e08407dd86519d9a)
++++ b/.idea/sonarlint/securityhotspotstore/index.pb	(date 1725582822694)
+@@ -6,4 +6,6 @@
+ o
+ ?backend/src/main/java/login/is/crud/service/UsuarioService.java,d\8\d8574c3582bba438246a320c0e04c427ef098d7c
+ g
+-7backend/src/main/java/login/is/crud/entity/Usuario.java,d\9\d920f2bf100dd28a1e5414f73d8bb887c7d00a9b
+\ No newline at end of file
++7backend/src/main/java/login/is/crud/entity/Usuario.java,d\9\d920f2bf100dd28a1e5414f73d8bb887c7d00a9b
++B
++backend/.gitignore,7\e\7e16691a9fc60084a157565ec422c8094d3df67c
+\ No newline at end of file
+Index: fronted-crud/src/styles.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/* You can add global styles to this file, and also import other style files */\r\ninput[type=number]::-webkit-inner-spin-button,\r\ninput[type=number]::-webkit-outer-spin-button {\r\n  -webkit-appearance: none;\r\n  margin: 0;\r\n}\r\n\r\ninput[type=number] { -moz-appearance:textfield; }\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/fronted-crud/src/styles.scss b/fronted-crud/src/styles.scss
+--- a/fronted-crud/src/styles.scss	(revision cab541210602519e0f2d4964e08407dd86519d9a)
++++ b/fronted-crud/src/styles.scss	(date 1725582220942)
+@@ -1,4 +1,3 @@
+-/* You can add global styles to this file, and also import other style files */
+ input[type=number]::-webkit-inner-spin-button,
+ input[type=number]::-webkit-outer-spin-button {
+   -webkit-appearance: none;
