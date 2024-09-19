@@ -7,3 +7,5 @@ o
 ?backend/src/main/java/login/is/crud/service/UsuarioService.java,d\8\d8574c3582bba438246a320c0e04c427ef098d7c
 g
 7backend/src/main/java/login/is/crud/entity/Usuario.java,d\9\d920f2bf100dd28a1e5414f73d8bb887c7d00a9b
+I
+fronted-crud/angular.json,7\9\795001b99246a8204abe82eba8f610e70e017a0f
