@@ -11,7 +11,7 @@ export const routes: Routes = [
     {
         path:'registro-form/:id',
         component:RegistroFormComponent,
-        title: "Resgistro de usuarios"
+        title: "Registro de usuarios"
     },
     {
         path:'**',
