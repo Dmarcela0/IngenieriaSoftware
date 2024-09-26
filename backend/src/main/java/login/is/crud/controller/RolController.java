@@ -2,24 +2,26 @@ package login.is.crud.controller;
 
 import java.util.List;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import login.is.crud.entity.Rol;
 import login.is.crud.service.RolService;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
-
+@RequestMapping("/rol")
 public class RolController {
 
-    RolService r1;
+    @Autowired
+    private RolService rolService;
 
-    public RolController(RolService r1){
-        this.r1=r1;
+    @GetMapping
+    private ResponseEntity<List<Rol>> getAllRol() {
+        return ResponseEntity.ok(rolService.findAll());
+
     }
-    
-@GetMapping("rol")
-public List<Rol>rol() {
-        return this.r1.getrepositorio();
-    }
-    
+
 }

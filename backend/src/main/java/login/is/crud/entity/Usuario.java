@@ -2,30 +2,33 @@ package login.is.crud.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-    @Entity
-    public class Usuario {
+@Entity
+public class Usuario {
     @Id
-    @Column (name = "identificacion")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "identificacion")
     private int identificacion;
-    @Column (name = "nombre")
+    @Column(name = "nombre")
     private String nombre;
-    @Column (name ="correo")
+    @Column(name = "correo")
     private String correo;
-    @Column (name = "contrasenia")
+    @Column(name = "contrasenia")
     private String contrasenia;
-    @Column (name = "usuario")
+    @Column(name = "usuario")
     private String usuario;
-    @Column (name = "estado")
-    private boolean estado; 
+    @Column(name = "estado")
+    private boolean estado;
 
-    public Usuario (){
+    public Usuario() {
 
     }
 
-
-    public Usuario(int identificacion, String nombre, String correo, String contrasenia, String usuario, boolean estado) {
+    public Usuario(int identificacion, String nombre, String correo, String contrasenia, String usuario,
+            boolean estado) {
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.correo = correo;
@@ -33,7 +36,6 @@ import jakarta.persistence.Id;
         this.usuario = usuario;
         this.estado = estado;
     }
-
 
     public int getIdentificacion() {
         return this.identificacion;
@@ -87,5 +89,4 @@ import jakarta.persistence.Id;
         this.estado = estado;
     }
 
-    
 }

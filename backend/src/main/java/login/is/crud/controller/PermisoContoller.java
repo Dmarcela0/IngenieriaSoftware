@@ -1,18 +1,27 @@
 package login.is.crud.controller;
 
-import login.is.crud.entity.Permiso;
-import login.is.crud.service.PermisoService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 
-@RestController
-public class PermisoContoller {
-    PermisoService permisoService;
-    public PermisoContoller(PermisoService permisoService) { this.permisoService = permisoService; }
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-    @GetMapping("")
-    public List<Permiso> getAllPermisos() { return this.permisoService.getRepositorio(); }
+import login.is.crud.entity.Permiso;
+import login.is.crud.service.PermisoService;
+
+@RestController
+@RequestMapping("/permiso")
+public class PermisoContoller {
+    @Autowired
+    private PermisoService permisoService;
+
+    @GetMapping("{id}")
+    private ResponseEntity<List<Permiso>> getAllPermisoByRol(@PathVariable("id") int idRol) {
+        return ResponseEntity.ok(permisoService.findAllByPermission(idRol));
+
+    }
 
 }
