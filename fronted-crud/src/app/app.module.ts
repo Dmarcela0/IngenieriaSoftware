@@ -10,6 +10,13 @@ import { PagesModule } from "./pages/pages.module";
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from "@angular/router";
+import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
+
+const routes: Routes = [
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'inicioSesion', component: InicioSesionComponent}
+];
 
 @NgModule({
   declarations: [
@@ -29,7 +36,9 @@ import { ReactiveFormsModule } from '@angular/forms';
       timeOut: 3000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
-    })
+    }),
+    RouterModule.forRoot(routes),
+    InicioSesionComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
