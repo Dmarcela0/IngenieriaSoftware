@@ -18,10 +18,4 @@ public class PermisoContoller {
     @Autowired
     private PermisoService permisoService;
 
-    @GetMapping("{id}")
-    private ResponseEntity<List<Permiso>> getAllPermisoByRol(@PathVariable("id") int idRol) {
-        return ResponseEntity.ok(permisoService.findAllByPermission(idRol));
-
-    }
-
 }

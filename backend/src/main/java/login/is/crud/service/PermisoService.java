@@ -101,19 +101,6 @@ public class PermisoService implements PermisoRepository {
         return permisoRepository.findAll();
     }
 
-    public List<Permiso> findAllByPermission(int id) {
-        List<Permiso> permisoRespuesta = null;
-        List<Permiso> permiso = permisoRepository.findAll();
-        for (int i = 0; i < permiso.size(); i++) {
-            if (permiso.get(i).getRol().getId() == id) {
-                permisoRespuesta.add(permiso.get(i));
-
-            }
-        }
-        return permisoRespuesta;
-
-    }
-
     @Override
     public List<Permiso> findAllById(Iterable<Long> ids) {
         // TODO Auto-generated method stub

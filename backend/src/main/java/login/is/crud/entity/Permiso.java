@@ -5,20 +5,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
 @Entity
 public class Permiso {
     @ManyToOne
+    @JoinColumn(name = "id_rol")
     private Rol rol;
 
     @Id
-    private long id;
+    private int id;
     @Column(name = "nombrePermiso")
     private String nombrePermiso;
 
-    public Permiso(long id, String nombrePermiso) {
+    public Permiso(Rol rol, int id, String nombrePermiso) {
+        this.rol = rol;
         this.id = id;
         this.nombrePermiso = nombrePermiso;
     }
@@ -30,7 +33,7 @@ public class Permiso {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

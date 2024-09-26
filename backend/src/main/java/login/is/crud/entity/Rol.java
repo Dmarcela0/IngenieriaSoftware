@@ -2,38 +2,25 @@ package login.is.crud.entity;
 
 import java.util.List;
 
+import org.hibernate.annotations.ManyToAny;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
 public class Rol {
-    @OneToMany
-    private List<Permiso> permisos;
 
     @Id
-    private long id;
+    private int id;
     @Column(name = "nombreRol")
     private String nombreRol;
-
-    @Column(name = "idPermiso")
-    private String idPermiso;
-
-    public String getIdPermiso() {
-        return this.idPermiso;
-    }
-
-    public void setIdPermiso(String idPermiso) {
-        this.idPermiso = idPermiso;
-    }
 
     public Rol() {
     }
 
-    public Rol(long id, String nombreRol) {
+    public Rol(int id, String nombreRol) {
         this.id = id;
         this.nombreRol = nombreRol;
     }
@@ -42,7 +29,7 @@ public class Rol {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
