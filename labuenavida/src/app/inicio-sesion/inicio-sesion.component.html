@@ -1,0 +1,23 @@
+<form>
+  <h3>Inicio de sesión</h3>
+  <br>
+  <div class="mb-3">
+    <label for="txt-usuario" class="form-label">Usuario</label>
+    <input type="text" class="form-control" id="txt-usuario" aria-describedby="Usuario" placeholder="Usuario">
+    <div id="usuario" class="form-text">Ingrese aquí su nombre de usuario.</div>
+  </div>
+  <div class="mb-3">
+    <label for="txt-contrasenia" class="form-label">Contraseña</label>
+    <input type="password" class="form-control" id="txt-contrasenia" placeholder="Contraseña">
+    <div id="txt-contrasenia" class="form-text">Ingrese aquí su contraseña.</div>
+  </div>
+  <div class="form-check form-switch">
+    <input type="checkbox" role="switch" class="form-check-input" id="chbx-guardaDatos" checked>
+    <label class="form-check-label" for="chbx-guardaDatos">Recordar usuario y contraseña</label>
+  </div>
+  <input type="radio" class="btn-check" name="options-outlined" id="btn-entrar" autocomplete="off" checked>
+  <label class="btn btn-outline-success" for="btn-entrar">Entrar</label>
+
+  <input type="radio" class="btn-check" name="options-outlined" id="btn-cancelar" autocomplete="off">
+  <label class="btn btn-outline-danger" for="btn-cancelar">Cancelar</label>
+</form>

@@ -1,0 +1,43 @@
+<style>
+  .blur-background {
+    position: relative;
+    height: 100vh;
+    overflow: hidden; /* Esto puede causar que el desenfoque no se vea */
+  }
+  .blur-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/assets/clubCampestre.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); /* Desenfoque */
+    z-index: -1; /* Coloca el fondo detrás del contenido */
+  }
+</style>
+
+<section class="blur-background">
+  <div class="p-4 p-md-5 mb-4 mt-4 ms-4 me-4">
+    <div class="bg-white rounded p-4 shadow" style="opacity: 0.9;">
+      <h1 class="display-4 fst-italic text-center">CLUB CAMPESTRE - LA BUENA VIDA</h1>
+    </div>
+  </div>
+  <div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom text-white text-center">¡Bienvenidos al Club Campestre - La Buena Vida!</h2>
+    <p class="text-white text-center" style="max-width: 600px; margin: auto;">
+      En nuestro club, cada momento es una celebración de la naturaleza y la buena compañía. Disfruta de un ambiente exclusivo donde el deporte, el relax y la diversión se unen para crear experiencias inolvidables. Te invitamos a descubrir todo lo que tenemos para ofrecerte y a ser parte de nuestra familia. ¡Tu aventura comienza aquí!
+    </p>
+    <div class="row row-cols-1 justify-content-center align-items-stretch g-4 py-5">
+      <div class="col d-flex justify-content-center">
+        <div class="card rounded-4 shadow-lg" style="background-color: #003366; cursor: pointer; width: 300px;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-center" routerLink="/citas/agendar">
+            <h3 class="mb-4 display-6 lh-1 fw-bold">Reserva</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
